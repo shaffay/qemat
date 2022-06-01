@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Constants from 'expo-constants'
 import Home  from './screens/Home';
+import Test  from './screens/test';
 
 
 export default function App() {
@@ -9,6 +10,7 @@ export default function App() {
     <View style={styles.container}>
  
  <Home />
+ {/* <Test /> */}
 
     </View>
   );

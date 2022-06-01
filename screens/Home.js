@@ -1,26 +1,61 @@
-import { StyleSheet, Text, View,Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View,Image,FlatList } from 'react-native';
 import Constants from 'expo-constants'
 import { Card,FAB } from 'react-native-paper';
 import { style } from '@mui/system';
 
 export default function Home() {
-  return (
-    <View style={styles.container}>
-    <Card style={styles.card}>
+  const data =[
+    {id:"1",name:"Shaffay Bajwa",position:"React Dev",img:"https://images.unsplash.com/photo-1653858381366-7d1ec0b6b2d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"},
+    {id:"2",name:"Haris Jameel",position:"React Dev",img:"https://images.unsplash.com/photo-1653858381366-7d1ec0b6b2d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"},
+ 
+  ]
 
-<View style={{flexDirection:"row"}}>
+const renderList =  ({item}) =>{
+      return(
 
-            <Image 
-            style={styles.img}
-            source={{ uri: "https://images.unsplash.com/photo-1653858381366-7d1ec0b6b2d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80" }} />
+        <Card style={styles.card} key={item.id}>
 
-      <View style={styles.cardtext}>
+        <View style={{flexDirection:"row"}}>
 
-                  <Text>Shaffay Bajwa</Text>
-                  <Text>React Native Dev</Text>
-      </View>
-</View>
+                    <Image 
+                    style={styles.img}
+                    source={{ uri: item.img }} />
+
+              <View style={styles.cardtext}>
+
+                          <Text>{item.name}</Text>
+                          <Text>{item.position}</Text>
+              </View>
+        </View>
     </Card>
+
+      )
+  }
+
+  return (
+
+    <View style={styles.container}>
+
+     
+
+      <FlatList 
+      
+      data={data}
+
+ 
+      renderItem = {(item)=>{
+        return renderList(item)
+    }}
+    
+      
+      keyExtractor={(item) => item.id}
+ 
+    
+
+      />
+
+
     <FAB
     style={styles.fab}
     larger
