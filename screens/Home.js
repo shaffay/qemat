@@ -4,11 +4,13 @@ import Constants from 'expo-constants'
 import { Card,FAB } from 'react-native-paper';
 import { style } from '@mui/system';
 
+
+
 export default function Home() {
   const data =[
     {id:"1",name:"Shaffay Bajwa",position:"React Dev",img:"https://images.unsplash.com/photo-1653858381366-7d1ec0b6b2d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"},
     {id:"2",name:"Haris Jameel",position:"React Dev",img:"https://images.unsplash.com/photo-1653858381366-7d1ec0b6b2d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"},
- 
+ z
   ]
 
 const renderList =  ({item}) =>{
